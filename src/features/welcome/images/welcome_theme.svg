@@ -40,8 +40,8 @@
       <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0.152941176 0 0 0 0 0.180392157 0 0 0 0 0.250980392 0 0 0 0.2 0"/>
     </filter>
     <linearGradient id="m" x1="35.192%" x2="146.327%" y1="0%" y2="222.965%">
-      <stop offset="0%" stop-color="#392DD1"/>
-      <stop offset="100%" stop-color="#FF4343"/>
+      <stop offset="0%" stop-color="#0cb620"/>
+      <stop offset="100%" stop-color="#69f034"/>
     </linearGradient>
     <linearGradient id="n" x1="36.57%" x2="36.57%" y1="114.015%" y2="-19.4%">
       <stop offset="0%" stop-color="#FFF"/>
@@ -78,8 +78,8 @@
       <feColorMatrix in="shadowBlurOuter1" values="0 0 0 0 0.152941 0 0 0 0 0.180392 0 0 0 0 0.25098 0 0 0 0.2 0"/>
     </filter>
     <linearGradient id="x" x1="0%" y1="50.706%" y2="50.706%">
-      <stop offset="0%" stop-color="#FB542B"/>
-      <stop offset="100%" stop-color="#E3380E"/>
+      <stop offset="0%" stop-color="#0cb620"/>
+      <stop offset="100%" stop-color="#69f034"/>
     </linearGradient>
     <circle id="w" cx="51.069" cy="7.139" r="7.139"/>
     <filter id="v" width="380.2%" height="380.2%" x="-140.1%" y="-91.1%" filterUnits="objectBoundingBox">

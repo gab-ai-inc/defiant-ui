@@ -1,0 +1,11 @@
+<svg width='100' height='129' xmlns='http://www.w3.org/2000/svg'>
+  <style>
+    @keyframes bounce{to{transform:translateY(5%)}}
+  </style>
+  <g style='animation:bounce 1s infinite alternate ease-in-out'>
+    <path fill="#00d177" d="M53.29,4H13.17A9.2,9.2,0,0,0,4,13.17V80.78A9.2,9.2,0,0,0,13.17,90H53.29C82.37,90,98,69.68,98,47S83.22,4,53.29,4"/>
+    <path fill="#000" d="M66.25,35.2H28.5a2.42,2.42,0,0,1,0-4.83H66.25a2.42,2.42,0,0,1,0,4.83"/>
+    <path fill="#000" d="M66.25,49.29H28.5a2.42,2.42,0,0,1,0-4.83H66.25a2.42,2.42,0,0,1,0,4.83"/>
+    <path fill="#000" d="M28.51,63.58a2.42,2.42,0,0,1,0-4.83H53.76a2.42,2.42,0,0,1,0,4.83Z"/>
+  </g>
+</svg>

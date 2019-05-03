@@ -17,7 +17,9 @@ const baseColors = {
   purple: '#845ef7',
   red: '#E32444',
   teal: '#20c997',
-  yellow: '#FFD43B'
+  yellow: '#FFD43B',
+  dissenter_green1: '#00d177',
+  dissenter_green2: '#00c466'
 }
 
 const white = '#FFFFFF'
@@ -199,6 +201,11 @@ const fades = {
   whiteFade15: tinyColor(white).setAlpha(.85).toHslString()
 }
 
+const dissenterColors = {
+  dissenterGreen1: baseColors.dissenter_green1,
+  dissenterGreen2: baseColors.dissenter_green2
+}
+
 export default {
   ...scaleBlue,
   ...scaleBlurple,
@@ -213,6 +220,7 @@ export default {
   ...scaleTeal,
   ...scaleYellow,
   ...fades,
+  ...dissenterColors,
   white,
   black
 }

@@ -10,8 +10,8 @@ const defaultTheme = {
       hoverColor: '#000'
     },
     primary: {
-      gradient1: '#ff7a1d',
-      gradient2: '#ff5000',
+      gradient1: '#00d177',
+      gradient2: '#00c466',
       color: '#fff',
       borderColor: 'transparent',
       hoverColor: '#fff',
@@ -27,7 +27,7 @@ const defaultTheme = {
     }
   },
   switchButton: {
-    checkedBg: '#ff6000',
+    checkedBg: '#00c466',
     uncheckedBg: '#ccc',
     knob: '#fff'
   }

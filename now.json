@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "name": "brave-ui",
+  "name": "dissenter-ui",
   "builds": [
     {
       "src": "package.json",
