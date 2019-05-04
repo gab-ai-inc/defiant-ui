@@ -321,7 +321,7 @@ exports[`Grant wrapper tests basic tests matches the snapshot 1`] = `
                   points="16.524725 0 16.5178571 18.9797718 33.0357143 28.4107143"
                 />
                 <polygon
-                  fill="#FB542B"
+                  fill="#00d177"
                   id="Fill-5"
                   points="0 28.4107143 16.5022194 19.0069334 16.5178571 0"
                 />

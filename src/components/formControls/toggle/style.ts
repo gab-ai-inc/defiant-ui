@@ -4,6 +4,7 @@
 
 import styled, { css } from '../../../theme'
 import { Props } from './index'
+import colors from '../../../theme/colors'
 
 const getBulletStyle = (p: Props) => {
   // default is large with dark variation
@@ -19,7 +20,7 @@ const getBulletStyle = (p: Props) => {
   }
 
   if (p.type === 'light') {
-    bgColor = '#fb542b'
+    bgColor = colors.dissenterGreen1
   }
 
   if (!p.checked) {

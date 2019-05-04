@@ -10,9 +10,9 @@ const defaultTheme = {
       hoverColor: '#000'
     },
     primary: {
-      background: '#FB542B',
+      background: '#00d177',
       color: '#FFF',
-      borderColor: '#FB542B',
+      borderColor: '#00d177',
       hoverColor: '#FFF',
       borderHoverColor: '#FFF'
     },
@@ -20,8 +20,8 @@ const defaultTheme = {
       background: 'transparent',
       color: '#76777A',
       borderColor: '#76777A',
-      hoverColor: '#FB542B',
-      borderHoverColor: '#FB542B'
+      hoverColor: '#00d177',
+      borderHoverColor: '#00d177'
     }
   },
   switchButton: {

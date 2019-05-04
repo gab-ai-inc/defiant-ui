@@ -2,8 +2,8 @@
 
 exports[`ModalBackupRestore tests basic tests matches the snapshot 1`] = `
 .c26 {
-  --button-main-color: #FB542B;
-  --button-main-color-hover: #FB542B;
+  --button-main-color: #00d177;
+  --button-main-color-hover: #00d177;
   --button-main-color-active: #ffb8a6;
   --button-state-color: var(--button-main-color);
   --icon-size: 16px;

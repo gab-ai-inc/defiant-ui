@@ -13,7 +13,7 @@ const baseColors = {
   green: '#51cf66',
   grey: '#AEB1C2',
   magenta: '#CA3BB2',
-  orange: '#FB542B',
+  orange: '#00d177',
   purple: '#845ef7',
   red: '#E32444',
   teal: '#20c997',

@@ -32,7 +32,7 @@ export const StyledStatsItem = styled<{}, 'li'>('li')`
   font-family: inherit;
 
   &:first-child {
-    color: #FB542B;
+    color: #00d177;
   }
   &:nth-child(2) {
     color: #B02FFB;
