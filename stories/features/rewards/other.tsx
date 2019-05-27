@@ -23,6 +23,7 @@ import {
   ToggleTips,
   Tooltip,
   DonationOverlay,
+  TweetBox,
   Tab
 } from '../../../src/features/rewards'
 import {
@@ -32,7 +33,7 @@ import {
 import { BatColorIcon, SettingsIcon, UpholdColorIcon } from '../../../src/components/icons'
 import GrantClaim from '../../../src/features/rewards/grantClaim'
 
-const bart = require('../../assets/img/bartBaker.jpeg')
+const favicon = require('../../assets/img/brave-favicon.png')
 const tipScreen = require('../../assets/img/tip_site.jpg')
 const siteBgLogo = require('../../assets/img/ddgo_siteBanner.svg')
 
@@ -178,10 +179,10 @@ storiesOf('Feature Components/Rewards/Other/Desktop', module)
       <div style={{ width: '400px' }}>
         <Profile
           type={select<any>('Type', { big: 'big', small: 'small' }, 'big')}
-          title={'Bart Baker'}
+          title={'Jonathon Doe'}
           verified={boolean('Verified', false)}
           provider={select<any>('Provider', { youtube: 'YouTube', twitter: 'Twitter', twitch: 'Twitch' }, 'youtube')}
-          src={bart}
+          src={favicon}
         />
       </div>
     )
@@ -299,12 +300,21 @@ storiesOf('Feature Components/Rewards/Other/Desktop', module)
               amount={'5.0'}
               monthlyDate={select<any>('Recurring', { yes: 'October 31st, 2018', no: '' }, 'October 31st, 2018')}
               logo={boolean('Show logo', false) ? siteBgLogo : null}
+              onTweet={boolean('Show Tweet Now button', false) ? dummyClick : undefined}
             />
             : null
         }
       </div>
     )
   }))
+  .add('Tweet Box', () => {
+    return (
+      <TweetBox
+        tweetTimestamp={number('Timestamp in seconds', 46420000)}
+        tweetText={text('Tweet text', 'This is my tweet.')}
+      />
+    )
+  })
   .add('Tab', withState({ tabIndexSelected: 0 }, (store) => {
     const onSwitch = () => {
       const newIndex = store.state.tabIndexSelected === 0 ? 1 : 0

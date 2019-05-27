@@ -9,10 +9,10 @@ import GenerateComponentForGraphic from './template'
 
 // Direct access to SVG
 export const Graphic = (
-<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'>
-    <path d='M27.48 9.12l-11-6a1 1 0 0 0-1 0l-11 6A1 1 0 0 0 4 10v12a1 1 0 0 0 .52.88l11 6a1 1 0 0 0 1 0l11-6A1 1 0 0 0 28 22V10a1 1 0 0 0-.52-.88zM21.8 12.6l-6 8a1 1 0 0 1-.8.4 1 1 0 0 1-.6-.2l-4-3a1 1 0 0 1 1.2-1.6l3.2 2.4 5.4-7.2a1 1 0 1 1 1.6 1.2z'
-    />
-</svg>
+    <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
+        <path d='M4.002 18h15.99563c1.77656 0 2.67293-2.1555 1.41418-3.41419l-7.99762-8c-.781-.781-2.04738-.78106-2.82844 0l-7.998 8C1.33156 15.842 2.22187 18 4.002 18zM12 8l8 8H4l8-8z'
+        />
+    </svg>
 )
 
 // Styled Component for SVG
