@@ -11,10 +11,17 @@ import { withKnobs, text } from '@storybook/addon-knobs'
 import { DetailRow as ContributeRow } from '../../../src/features/rewards/tableContribute'
 import { DetailRow as DonationDetailRow } from '../../../src/features/rewards/tableDonation'
 import { DetailRow as TransactionsRow } from '../../../src/features/rewards/tableTransactions'
-import { ModalContribute, ModalBackupRestore, ModalActivity, ModalDonation } from '../../../src/features/rewards'
+import { DetailRow as PendingDetailRow } from '../../../src/features/rewards/tablePending'
+import {
+  ModalContribute,
+  ModalBackupRestore,
+  ModalActivity,
+  ModalDonation,
+  ModalPending
+} from '../../../src/features/rewards'
 import ModalAddFunds, { Address } from '../../../src/features/rewards/modalAddFunds'
 
-const bart = require('../../assets/img/bartBaker.jpeg')
+const favicon = require('../../assets/img/brave-favicon.png')
 const ddgo = require('../../assets/img/ddgo.jpg')
 const wiki = require('../../assets/img/wiki.jpg')
 const buzz = require('../../assets/img/buzz.jpg')
@@ -50,14 +57,19 @@ storiesOf('Feature Components/Rewards/Modal', module)
       </div>
     )
   }))
-  .add('Contribute', () => {
+  .add('Contribute', withState({ activeTabId: 0 }, (store) => {
+    const onTabChange = () => {
+      const newId = store.state.activeTabId === 0 ? 1 : 0
+      store.set({ activeTabId: newId })
+    }
+
     const rows: ContributeRow[] = [
       {
         profile: {
-          name: 'Bart Baker',
+          name: 'Jonathon Doe',
           verified: true,
           provider: 'youtube',
-          src: bart
+          src: favicon
         },
         url: 'https://brave.com',
         attention: 40,
@@ -108,20 +120,22 @@ storiesOf('Feature Components/Rewards/Modal', module)
     return (
       <ModalContribute
         rows={rows}
+        excludedRows={rows}
+        onTabChange={onTabChange}
         onClose={doNothing}
-        numExcludedSites={25}
         onRestore={doNothing}
+        activeTabId={store.state.activeTabId}
       />
     )
-  })
+  }))
   .add('Activity', () => {
     const contributions: ContributeRow[] = [
       {
         profile: {
-          name: 'Bart Baker',
+          name: 'Jonathon Doe',
           verified: true,
           provider: 'youtube',
-          src: bart
+          src: favicon
         },
         url: 'https://brave.com',
         attention: 40,
@@ -203,7 +217,7 @@ storiesOf('Feature Components/Rewards/Modal', module)
         date: '6/9',
         type: 'tipOnLike',
         description: {
-          publisher: 'Bart Baker',
+          publisher: 'Jonathon Doe',
           platform: 'YouTube'
         },
         amount: {
@@ -387,14 +401,30 @@ storiesOf('Feature Components/Rewards/Modal', module)
       />
     )
   })
-  .add('Donation',() => {
+  .add('Add funds (JP)', () => {
+    const addresses: Address[] = [
+      {
+        type: 'BAT',
+        address: '0xF10bfc0EB8Fcfd1240a5BB97C3e5a7752cD1C388',
+        qr: 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAM0AAADNCAAAAAA+16u1AAACPklEQVR42u3bwU7DMBAE0P7/T8ONA1LcGXsTFfRyKpQ2+3IY2bvm9fWfrhcNDQ0NDQ0NDQ0NDQ0NDc2p5vX+6m7y84lfry6/ebMCGhqaSU1QW/CJX2+kT6KvgIaG5h7NZd5UubQu6/KbgwpoaGg+QNNn2iWYhobm72rSzwZxRkND81GatGex+bG14eHdGg0NTd/rvPnVw51bGhqajTHj8iZplWlL5O4pLg0NTbC7qIruextBqtLQ0DyiqQaYl8LL363Dbv04hlY2NDQ0qSYoK4ikILqC5c15ptHQ0FSa4E792HJzhHo08aChoTmeEfQ3Duae/RLqqMtBQ0NzsrIJGhebtfWtz/P9DQ0NTZVpgStY43T9yrBDQkND84imGmX2rYn10qiKMxoamnFNuhxJrZvnH9MGBw0NzbgmbWakZaVReHIaioaGZkhTRVe1sgkmKNXGh4aG5h7NzHQybWb0OXfU66ShoakmHsGwI9gMBXk4s8ahoaEZ0lSdy+CU08k/TQ0lNA0NzaYmaFqmG5X+EY13bmloaI4zbXOP0g871o9tKKFpaGjSTAuOL6Y90X7Pk8YZDQ3NpCZuKoQHodYxlbY5aWhontO83l/rP+6LmTlQTUNDM6lJkyzY7lSLpODJ0tDQPKfZLDCIs2p4Mtm5paGhuVmzLjrY5KQNTxoamo/XHGfaxgiGhoZmWpO+GxxcSmNq8+ADDQ3NuCbdbAQ/phuV4I9v7NzS0ND8g4uGhoaGhoaGhoaGhoaGhqa5vgFTleQ0sHcoKgAAAABJRU5ErkJggg=='
+      }
+    ]
+
+    return (
+      <ModalAddFunds
+        addresses={addresses}
+        onClose={doNothing}
+      />
+    )
+  })
+  .add('Donation', () => {
     const rows: DonationDetailRow[] = [
       {
         profile: {
-          name: 'Bart Baker',
+          name: 'Jonathon Doe',
           verified: true,
           provider: 'youtube',
-          src: bart
+          src: favicon
         },
         url: 'https://brave.com',
         type: 'recurring',
@@ -438,6 +468,64 @@ storiesOf('Feature Components/Rewards/Modal', module)
       <ModalDonation
         rows={rows}
         onClose={doNothing}
+      />
+    )
+  })
+  .add('Pending contributions',() => {
+    const rows: PendingDetailRow[] = [
+      {
+        profile: {
+          name: 'Jonathon Doe',
+          verified: true,
+          provider: 'youtube',
+          src: favicon
+        },
+        url: 'https://brave.com',
+        type: 'recurring',
+        amount: {
+          tokens: '2.0',
+          converted: '0.20'
+        },
+        date: 'Jan 2',
+        onRemove: doNothing
+      },
+      {
+        profile: {
+          verified: false,
+          name: 'theguardian.com',
+          src: guardian
+        },
+        url: 'https://brave.com',
+        type: 'tip',
+        amount: {
+          tokens: '12000.0',
+          converted: '6000.20'
+        },
+        date: 'May 7',
+        onRemove: doNothing
+      },
+      {
+        profile: {
+          verified: false,
+          name: 'BrendanEich',
+          provider: 'twitter',
+          src: eich
+        },
+        url: 'https://brave.com',
+        type: 'ac',
+        amount: {
+          tokens: '1.0',
+          converted: '0.20'
+        },
+        date: 'May 2',
+        onRemove: doNothing
+      }
+    ]
+    return (
+      <ModalPending
+        rows={rows}
+        onClose={doNothing}
+        onRemoveAll={doNothing}
       />
     )
   })

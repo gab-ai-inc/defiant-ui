@@ -25,6 +25,7 @@ import ModalAddFunds from './modalAddFunds'
 import ModalBackupRestore from './modalBackupRestore'
 import ModalContribute from './modalContribute'
 import ModalDonation from './modalDonation'
+import ModalPending from './modalPending'
 import NextContribution from './nextContribution'
 import PanelWelcome from './panelWelcome'
 import Profile from './profile'
@@ -35,11 +36,13 @@ import SiteBanner from './siteBanner'
 import Tab from './tab'
 import TableContribute from './tableContribute'
 import TableDonation from './tableDonation'
+import TablePending from './tablePending'
 import TableTransactions from './tableTransactions'
 import Tip from './tip'
 import ToggleTips from './toggleTips'
 import Tokens from './tokens'
 import Tooltip from './tooltip'
+import TweetBox from './tweetBox'
 import WalletEmpty from './walletEmpty'
 import WalletOff from './walletOff'
 import WalletPanel from './walletPanel'
@@ -73,6 +76,7 @@ export {
   ModalBackupRestore,
   ModalContribute,
   ModalDonation,
+  ModalPending,
   NextContribution,
   PanelWelcome,
   Profile,
@@ -83,11 +87,13 @@ export {
   Tab,
   TableContribute,
   TableDonation,
+  TablePending,
   TableTransactions,
   Tip,
   ToggleTips,
   Tokens,
   Tooltip,
+  TweetBox,
   WalletEmpty,
   WalletOff,
   WalletPanel,

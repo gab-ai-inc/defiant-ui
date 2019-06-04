@@ -21,7 +21,7 @@ import NextContribution from '../../../../src/features/rewards/nextContribution'
 import locale from './fakeLocale'
 
 // Assets
-const bartBaker = require('../../../assets/img/bartBaker.jpeg')
+const favicon = require('../../../assets/img/brave-favicon.png')
 const buzz = require('../../../assets/img/buzz.jpg')
 const ddgo = require('../../../assets/img/ddgo.jpg')
 const guardian = require('../../../assets/img/guardian.jpg')
@@ -96,10 +96,10 @@ class ContributeBox extends React.Component<{}, State> {
     return [
       {
         profile: {
-          name: 'Bart Baker',
+          name: 'Jonathon Doe',
           verified: true,
           provider: 'youtube',
-          src: bartBaker
+          src: favicon
         },
         url: 'https://brave.com',
         attention: 40,
@@ -193,7 +193,7 @@ class ContributeBox extends React.Component<{}, State> {
           this.state.modalContribute
             ? <ModalContribute
               onRestore={doNothing}
-              numExcludedSites={100}
+              excludedRows={this.contributeRows}
               rows={this.contributeRows}
               onClose={this.onContributeModalClose.bind(self)}
             />
@@ -224,7 +224,6 @@ class ContributeBox extends React.Component<{}, State> {
           allSites={false}
           numSites={55}
           showRemove={true}
-          onRestore={doNothing}
           numExcludedSites={100}
           onShowAll={this.onContributeModalOpen.bind(self)}
           headerColor={true}

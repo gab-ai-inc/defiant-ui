@@ -11,8 +11,9 @@ import centered from '@storybook/addon-centered'
 import TableContribute, { DetailRow as ContributeDetailRow } from '../../../src/features/rewards/tableContribute'
 import TableDonation, { DetailRow as DonationDetailRow } from '../../../src/features/rewards/tableDonation'
 import TableTransactions, { DetailRow as TransactionsRow } from '../../../src/features/rewards/tableTransactions'
+import TablePending, { DetailRow as PendingDetailRow } from '../../../src/features/rewards/tablePending'
 
-const bart = require('../../assets/img/bartBaker.jpeg')
+const favicon = require('../../assets/img/brave-favicon.png')
 const ddgo = require('../../assets/img/ddgo.jpg')
 const wiki = require('../../assets/img/wiki.jpg')
 const buzz = require('../../assets/img/buzz.jpg')
@@ -26,7 +27,7 @@ const doNothing = () => {
 storiesOf('Feature Components/Rewards/Table', module)
   .addDecorator(withKnobs)
   .addDecorator(centered)
-  .add('Contribution',() => {
+  .add('Contribution', () => {
     const header: string[] = [
       'Site',
       'Attention'
@@ -35,10 +36,10 @@ storiesOf('Feature Components/Rewards/Table', module)
     const rows: ContributeDetailRow[] = [
       {
         profile: {
-          name: 'Bart Baker',
+          name: 'Jonathon Doe',
           verified: true,
           provider: 'youtube',
-          src: bart
+          src: favicon
         },
         url: 'https://brave.com',
         attention: 40,
@@ -101,14 +102,14 @@ storiesOf('Feature Components/Rewards/Table', module)
       </div>
     )
   })
-  .add('Donation',() => {
+  .add('Donation', () => {
     const rows: DonationDetailRow[] = [
       {
         profile: {
-          name: 'Bart Baker',
+          name: 'Jonathon Doe',
           verified: true,
           provider: 'youtube',
-          src: bart
+          src: favicon
         },
         url: 'https://brave.com',
         type: 'recurring',
@@ -161,7 +162,7 @@ storiesOf('Feature Components/Rewards/Table', module)
       </div>
     )
   })
-  .add('Transactions',() => {
+  .add('Transactions', () => {
     const rows: TransactionsRow[] = [
       {
         date: '6/1',
@@ -176,7 +177,7 @@ storiesOf('Feature Components/Rewards/Table', module)
         date: '6/9',
         type: 'tipOnLike',
         description: {
-          publisher: 'Bart Baker',
+          publisher: 'Jonathon Doe',
           platform: 'YouTube'
         },
         amount: {
@@ -203,6 +204,66 @@ storiesOf('Feature Components/Rewards/Table', module)
         >
           Sorry no transactions.
         </TableTransactions>
+      </div>
+    )
+  })
+  .add('Pending contributions',() => {
+    const rows: PendingDetailRow[] = [
+      {
+        profile: {
+          name: 'Jonathon Doe',
+          verified: true,
+          provider: 'youtube',
+          src: favicon
+        },
+        url: 'https://brave.com',
+        type: 'recurring',
+        amount: {
+          tokens: '2.0',
+          converted: '0.20'
+        },
+        date: 'Jan 2',
+        onRemove: doNothing
+      },
+      {
+        profile: {
+          verified: false,
+          name: 'theguardian.com',
+          src: guardian
+        },
+        url: 'https://brave.com',
+        type: 'tip',
+        amount: {
+          tokens: '12000.0',
+          converted: '6000.20'
+        },
+        date: 'May 7',
+        onRemove: doNothing
+      },
+      {
+        profile: {
+          verified: false,
+          name: 'BrendanEich',
+          provider: 'twitter',
+          src: eich
+        },
+        url: 'https://brave.com',
+        type: 'ac',
+        amount: {
+          tokens: '1.0',
+          converted: '0.20'
+        },
+        date: 'May 2',
+        onRemove: doNothing
+      }
+    ]
+    return (
+      <div style={{ width: '595px' }}>
+        <TablePending
+          rows={object('Rows', rows)}
+        >
+          Please visit some sites
+        </TablePending>
       </div>
     )
   })

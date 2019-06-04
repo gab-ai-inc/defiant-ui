@@ -13,14 +13,19 @@ const locale = {
   import: 'Import',
   imported: 'Imported',
   // third screen
-  setDefaultSearchEngine: 'Change your search engine',
+  setDefault: 'Set default',
+  setDefaultSearchEngine: 'Set default search engine',
   chooseSearchEngine: 'Choose the search engine you would like to use by default when searching the web from the address bar.',
+  privateExperience: 'For a more private search experience, try DuckDuckGo.',
+  selectSearchEngine: 'Select a search engine',
+  fakeSearchProvider1: 'DuckDuckGo',
+  fakeSearchProvider2: 'Google (default)',
   // fourth screen
   chooseYourTheme: 'Choose your color theme',
   findToolbarTheme: 'Set the color of your toolbar by selecting the light or dark option from the settings panel.',
   // fifth screen
   protectYourPrivacy: 'Manage your shields',
-  adjustProtectionLevel: 'Brave shields protects you from unwanted ads and trackers while browsing. If you encounter an issue while browsing a particular site, adjust your protection level from the shields panel in the toolbar.',
+  adjustProtectionLevel: 'Protect against privacy-invading ads and trackers while browsing with Brave Shields. Set Shields to "down" if a site doesn’t seem to be working properly.',
   showMeWhere: 'Show Shields',
   // sixth screen
   enableBraveRewards: 'Enable Brave Rewards',
