@@ -235,51 +235,53 @@ storiesOf('Feature Components/Rewards/Concepts/Desktop', module)
     }
 
     return (
-      <div style={{ position: 'absolute', top: '40px', left: '40px', borderRadius: '8px', overflow: 'hidden' }}>
-        <WalletWrapper
-          compact={true}
-          contentPadding={false}
-          gradientTop={'249,251,252'}
-          balance={text('Tokens', '30.0')}
-          converted={text('Converted', '15.50 USD')}
-          actions={[
-            {
-              name: 'Add funds',
-              action: doNothing,
-              icon: <WalletAddIcon />
-            },
-            {
-              name: 'Settings',
-              action: doNothing,
-              icon: <BatColorIcon />
-            }
-          ]}
-          showSecActions={false}
-          connectedWallet={boolean('Connected wallet', true)}
-          grants={object('Grants', [
-            {
-              tokens: '8.0',
-              expireDate: '7/15/2018',
-              type: 'ugp'
-            },
-            {
-              tokens: '10.0',
-              expireDate: '9/10/2018',
-              type: 'ugp'
-            },
-            {
-              tokens: '10.0',
-              expireDate: '10/10/2018',
-              type: 'ads'
-            }
-          ])}
-        >
-          <WalletPanelDisabled
-            onTOSClick={doNothing}
-            onPrivacyClick={doNothing}
-            onEnable={doNothing}
-          />
-        </WalletWrapper>
+      <div style={{ background: `url(${tipScreen}) no-repeat top center`, width: '986px', height: '912px', margin: '0 auto', position: 'relative' }}>
+        <div style={{ position: 'absolute', top: '40px', left: '40px', borderRadius: '8px', overflow: 'hidden' }}>
+          <WalletWrapper
+            compact={true}
+            contentPadding={false}
+            gradientTop={'249,251,252'}
+            balance={text('Tokens', '30.0')}
+            converted={text('Converted', '15.50 USD')}
+            actions={[
+              {
+                name: 'Add funds',
+                action: doNothing,
+                icon: <WalletAddIcon />
+              },
+              {
+                name: 'Settings',
+                action: doNothing,
+                icon: <BatColorIcon />
+              }
+            ]}
+            showSecActions={false}
+            connectedWallet={boolean('Connected wallet', true)}
+            grants={object('Grants', [
+              {
+                tokens: '8.0',
+                expireDate: '7/15/2018',
+                type: 'ugp'
+              },
+              {
+                tokens: '10.0',
+                expireDate: '9/10/2018',
+                type: 'ugp'
+              },
+              {
+                tokens: '10.0',
+                expireDate: '10/10/2018',
+                type: 'ads'
+              }
+            ])}
+          >
+            <WalletPanelDisabled
+              onTOSClick={doNothing}
+              onPrivacyClick={doNothing}
+              onEnable={doNothing}
+            />
+          </WalletWrapper>
+        </div>
         <div style={{ position: 'absolute', top: '40px', left: '500px', width: '330px', borderRadius: '8px', overflow: 'hidden' }}>
           <DisabledPanel isPrivate={true} onLinkOpen={onPrivateLink} />
         </div>
@@ -370,57 +372,53 @@ storiesOf('Feature Components/Rewards/Concepts/Desktop', module)
     }
 
     return (
-      <div style={{ position: 'relative' }}>
-
-        <WalletWrapper
-          compact={true}
-          contentPadding={false}
-          notification={store.state.notification as Notification}
-          gradientTop={getGradientColor()}
-          balance={text('Tokens', '30.0')}
-          converted={text('Converted', '15.50 USD')}
-          actions={[
-            {
-              name: 'Add funds',
-              action: doNothing,
-              icon: <WalletAddIcon />
-            },
-            {
-              name: 'Settings',
-              action: doNothing,
-              icon: <BatColorIcon />
-            }
-          ]}
-          showCopy={boolean('Show Uphold', false)}
-          showSecActions={false}
-          connectedWallet={boolean('Connected wallet', false)}
-          grants={object('Grants', [
-            {
-              tokens: '8.0',
-              expireDate: '7/15/2018',
-              type: 'ugp'
-            },
-            {
-              tokens: '10.0',
-              expireDate: '9/10/2018',
-              type: 'ugp'
-            },
-            {
-              tokens: '10.0',
-              expireDate: '10/10/2018',
-              type: 'ads'
-            }
-          ])}
-          grant={store.state.grant}
-          onGrantHide={onGrantHide}
-          onNotificationClick={onFetchCaptcha}
-          onSolution={onSolution}
-          onFinish={onFinish}
-          convertProbiToFixed={convertProbiToFixed}
-        >
-          <WalletSummarySlider
-            id={'panel-slider'}
-            onToggle={onSummaryToggle}
+      <div style={{ background: `url(${tipScreen}) no-repeat top center`, width: '986px', height: '100vh', margin: '0 auto', position: 'relative' }}>
+        <div style={{ position: 'absolute', top: '50px', left: '560px', borderRadius: '8px', overflow: 'hidden' }}>
+          <WalletWrapper
+            compact={true}
+            contentPadding={false}
+            notification={store.state.notification as Notification}
+            gradientTop={getGradientColor()}
+            balance={text('Tokens', '30.0')}
+            converted={text('Converted', '15.50 USD')}
+            actions={[
+              {
+                name: 'Add funds',
+                action: doNothing,
+                icon: <WalletAddIcon />
+              },
+              {
+                name: 'Settings',
+                action: doNothing,
+                icon: <BatColorIcon />
+              }
+            ]}
+            showCopy={boolean('Show Uphold', false)}
+            showSecActions={false}
+            connectedWallet={boolean('Connected wallet', false)}
+            grants={object('Grants', [
+              {
+                tokens: '8.0',
+                expireDate: '7/15/2018',
+                type: 'ugp'
+              },
+              {
+                tokens: '10.0',
+                expireDate: '9/10/2018',
+                type: 'ugp'
+              },
+              {
+                tokens: '10.0',
+                expireDate: '10/10/2018',
+                type: 'ads'
+              }
+            ])}
+            grant={store.state.grant}
+            onGrantHide={onGrantHide}
+            onNotificationClick={onFetchCaptcha}
+            onSolution={onSolution}
+            onFinish={onFinish}
+            convertProbiToFixed={convertProbiToFixed}
           >
             <WalletPanel
               id={'wallet-panel'}
