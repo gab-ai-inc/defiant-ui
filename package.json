@@ -49,6 +49,7 @@
   "dependencies": {
     "@ctrl/tinycolor": "^2.2.1",
     "emptykit.css": "^1.0.1",
+    "js-yaml": "^3.13.1",
     "styled-components": "^3.2.5"
   },
   "devDependencies": {
