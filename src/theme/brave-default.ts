@@ -7,11 +7,11 @@ import ITheme from './theme-interface'
 const theme: ITheme = {
   name: 'Default',
   color: {
-    brandBrave: colors.orange500,
+    brandBrave: colors.dissenterGreen1,
     brandBat: colors.blurple500,
     // brave controls
-    brandBraveInteracting: colors.orange500,
-    brandBraveActive: colors.orange200,
+    brandBraveInteracting: colors.dissenterGreen1,
+    brandBraveActive: colors.dissenterGreen2,
     brandBraveLight: colors.orange000,
     // bat controls
     brandBatInteracting: colors.blurple500,
